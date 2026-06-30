@@ -6,15 +6,10 @@
   <title>Estrela Decorações | Móveis e Decorações de Alto Padrão</title>
   <meta name="description" content="Estrela Decorações em União da Vitória/PR — móveis e decorações de alto padrão para transformar sua casa em um ambiente sofisticado e único.">
   <link rel="icon" href="assets/logo-estrela.webp" type="image/png">
-  <!-- Preconnect externo crítico -->
-  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Preload LCP: hero image -->
-  <link rel="preload" as="image"
-    href="https://images.unsplash.com/photo-1618220179428-22790b461013?w=1200&q=72&auto=format&fm=webp&fit=crop"
-    imagesrcset="https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&q=72&auto=format&fm=webp&fit=crop 800w, https://images.unsplash.com/photo-1618220179428-22790b461013?w=1200&q=72&auto=format&fm=webp&fit=crop 1200w"
-    fetchpriority="high">
+  <!-- Preload LCP: hero image local -->
+  <link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high">
   <!-- Fontes não bloqueantes -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
@@ -1177,14 +1172,11 @@
 </nav>
 
 <!-- ── Hero ───────────────────────────────────────────── -->
+<main>
 <section class="hero" id="hero" aria-label="Apresentação">
   <!-- Background: opulent luxury interior -->
   <img class="hero-bg"
-    src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=1200&q=72&auto=format&fm=webp&fit=crop"
-    srcset="https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&q=72&auto=format&fm=webp&fit=crop 800w,
-            https://images.unsplash.com/photo-1618220179428-22790b461013?w=1200&q=72&auto=format&fm=webp&fit=crop 1200w,
-            https://images.unsplash.com/photo-1618220179428-22790b461013?w=1600&q=72&auto=format&fm=webp&fit=crop 1600w"
-    sizes="100vw"
+    src="assets/hero.webp"
     fetchpriority="high"
     alt=""
     aria-hidden="true"
@@ -1568,6 +1560,7 @@
   </div>
 </section>
 
+</main>
 <!-- ── Footer ─────────────────────────────────────────── -->
 <footer>
   <div class="footer-brand">estrela <span>Decorações</span></div>
@@ -1591,7 +1584,25 @@
   </a>
 </div>
 
-<script type="module" src="https://w.behold.so/widget.js"></script>
+<!-- Behold widget: carrega só quando seção entra na tela -->
+<script>
+(function(){
+  var loaded = false;
+  var target = document.querySelector('.behold-wrap');
+  if (!target) return;
+  var obs = new IntersectionObserver(function(entries){
+    if (entries[0].isIntersecting && !loaded) {
+      loaded = true;
+      var s = document.createElement('script');
+      s.type = 'module';
+      s.src = 'https://w.behold.so/widget.js';
+      document.head.appendChild(s);
+      obs.disconnect();
+    }
+  }, { rootMargin: '200px' });
+  obs.observe(target);
+})();
+</script>
 <script>
 /* ── Nav scroll ─────────────────────────────────────── */
 const nav = document.getElementById('nav');
