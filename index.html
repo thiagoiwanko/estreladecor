@@ -5,10 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Estrela Decorações | Móveis e Decorações de Alto Padrão</title>
   <meta name="description" content="Estrela Decorações em União da Vitória/PR — móveis e decorações de alto padrão para transformar sua casa em um ambiente sofisticado e único.">
-  <link rel="icon" href="assets/logo-estrela.png" type="image/png">
+  <link rel="icon" href="assets/logo-estrela.webp" type="image/png">
+  <!-- Preconnect externo crítico -->
+  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Preload LCP: hero image -->
+  <link rel="preload" as="image"
+    href="https://images.unsplash.com/photo-1618220179428-22790b461013?w=1200&q=72&auto=format&fm=webp&fit=crop"
+    imagesrcset="https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&q=72&auto=format&fm=webp&fit=crop 800w, https://images.unsplash.com/photo-1618220179428-22790b461013?w=1200&q=72&auto=format&fm=webp&fit=crop 1200w"
+    fetchpriority="high">
+  <!-- Fontes não bloqueantes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
   <style>
     @font-face {
       font-family: 'Rastanty Cortez';
@@ -1153,7 +1162,7 @@
 <!-- ── Nav ───────────────────────────────────────────── -->
 <nav class="nav" id="nav">
   <a href="#" class="nav-logo-wrap" aria-label="Estrela Decorações — início">
-    <img src="assets/logo-estrela.png" alt="Estrela Decorações" class="nav-logo-img">
+    <img src="assets/logo-estrela.webp" alt="Estrela Decorações" class="nav-logo-img">
   </a>
   <div class="nav-cta">
     <a href="https://wa.me/554235233523?text=Olá!%20Vim%20pelo%20site%20da%20Estrela%20Decorações%20e%20gostaria%20de%20saber%20mais." class="nav-btn wpp" target="_blank" rel="noopener">
@@ -1171,7 +1180,12 @@
 <section class="hero" id="hero" aria-label="Apresentação">
   <!-- Background: opulent luxury interior -->
   <img class="hero-bg"
-    src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=1800&q=88&auto=format&fit=crop"
+    src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=1200&q=72&auto=format&fm=webp&fit=crop"
+    srcset="https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&q=72&auto=format&fm=webp&fit=crop 800w,
+            https://images.unsplash.com/photo-1618220179428-22790b461013?w=1200&q=72&auto=format&fm=webp&fit=crop 1200w,
+            https://images.unsplash.com/photo-1618220179428-22790b461013?w=1600&q=72&auto=format&fm=webp&fit=crop 1600w"
+    sizes="100vw"
+    fetchpriority="high"
     alt=""
     aria-hidden="true"
     loading="eager"
@@ -1245,38 +1259,38 @@
   <div class="marquee-outer">
     <div class="marquee-track" id="marqueeTrack">
       <!-- Set 1 -->
-      <div class="brand-slot"><img src="assets/brands/viastar.png" alt="Via Star" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/viastar.webp" alt="Via Star" loading="lazy" class="brand-logo"></div>
       <div class="brand-slot"><span class="brand-name">Tapetes São Carlos</span></div>
-      <div class="brand-slot"><img src="assets/brands/pilati.png" alt="Pilati" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/pilati.webp" alt="Pilati" loading="lazy" class="brand-logo"></div>
       <div class="brand-slot"><span class="brand-name">Bell Design</span></div>
       <div class="brand-slot"><span class="brand-name">Buriti</span></div>
-      <div class="brand-slot"><img src="assets/brands/malvas.png" alt="Malvas" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/malvas.webp" alt="Malvas" loading="lazy" class="brand-logo"></div>
       <div class="brand-slot"><span class="brand-name">Artcrope</span></div>
       <div class="brand-slot"><span class="brand-name">Armil</span></div>
       <div class="brand-slot"><span class="brand-name">Ceval</span></div>
       <div class="brand-slot"><span class="brand-name">CCL</span></div>
-      <div class="brand-slot"><img src="assets/brands/dallacosta.png" alt="Dalla Costa" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/dallacosta.webp" alt="Dalla Costa" loading="lazy" class="brand-logo"></div>
       <div class="brand-slot"><span class="brand-name">Century Estofados</span></div>
       <div class="brand-slot"><span class="brand-name">Gottems Móveis</span></div>
       <div class="brand-slot"><span class="brand-name">Enele</span></div>
       <div class="brand-slot"><span class="brand-name">Ideale</span></div>
       <div class="brand-slot"><span class="brand-name">J. Marcon</span></div>
-      <div class="brand-slot"><img src="assets/brands/meyer.png" alt="Meyer Móveis" class="brand-logo"></div>
-      <div class="brand-slot"><img src="assets/brands/kuka.png" alt="Kuka Home" class="brand-logo"></div>
-      <div class="brand-slot"><img src="assets/brands/molufan.png" alt="Molufan" class="brand-logo"></div>
-      <div class="brand-slot"><img src="assets/brands/tapetah.png" alt="Tapetah" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/meyer.webp" alt="Meyer Móveis" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/kuka.webp" alt="Kuka Home" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/molufan.webp" alt="Molufan" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/tapetah.webp" alt="Tapetah" loading="lazy" class="brand-logo"></div>
       <div class="brand-slot"><span class="brand-name">Lerma</span></div>
-      <div class="brand-slot"><img src="assets/brands/james.png" alt="Móveis James" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/james.webp" alt="Móveis James" loading="lazy" class="brand-logo"></div>
       <div class="brand-slot"><span class="brand-name">Rudnick</span></div>
-      <div class="brand-slot"><img src="assets/brands/itamoveis.png" alt="Itamóveis" class="brand-logo"></div>
-      <div class="brand-slot"><img src="assets/brands/itacadeiras.png" alt="Itacadeiras" class="brand-logo"></div>
-      <div class="brand-slot"><img src="assets/brands/herval.png" alt="Herval" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/itamoveis.webp" alt="Itamóveis" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/itacadeiras.webp" alt="Itacadeiras" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/herval.png" alt="Herval" loading="lazy" class="brand-logo"></div>
       <div class="brand-slot"><span class="brand-name">Vultis</span></div>
-      <div class="brand-slot"><img src="assets/brands/klassic.png" alt="Klassic" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/klassic.webp" alt="Klassic" loading="lazy" class="brand-logo"></div>
       <div class="brand-slot"><span class="brand-name">Lugon</span></div>
-      <div class="brand-slot"><img src="assets/brands/msul.png" alt="MSul Móveis" class="brand-logo"></div>
-      <div class="brand-slot"><img src="assets/brands/nacional.png" alt="Nacional" class="brand-logo"></div>
-      <div class="brand-slot"><img src="assets/brands/mempra.png" alt="Mempra Design" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/msul.webp" alt="MSul Móveis" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/nacional.webp" alt="Nacional" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/mempra.webp" alt="Mempra Design" loading="lazy" class="brand-logo"></div>
       <div class="brand-slot"><span class="brand-name">Polço Decor</span></div>
       <div class="brand-slot"><span class="brand-name">Seiva</span></div>
       <div class="brand-slot"><span class="brand-name">Samer</span></div>
@@ -1286,38 +1300,38 @@
       <div class="brand-slot"><span class="brand-name">Temda</span></div>
       <div class="brand-slot"><span class="brand-name">Toro Bianco Estofados</span></div>
       <!-- Set 2 (duplicate for seamless loop) -->
-      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/viastar.png" alt="Via Star" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/viastar.webp" alt="Via Star" loading="lazy" class="brand-logo"></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">Tapetes São Carlos</span></div>
-      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/pilati.png" alt="Pilati" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/pilati.webp" alt="Pilati" loading="lazy" class="brand-logo"></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">Bell Design</span></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">Buriti</span></div>
-      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/malvas.png" alt="Malvas" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/malvas.webp" alt="Malvas" loading="lazy" class="brand-logo"></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">Artcrope</span></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">Armil</span></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">Ceval</span></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">CCL</span></div>
-      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/dallacosta.png" alt="Dalla Costa" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/dallacosta.webp" alt="Dalla Costa" loading="lazy" class="brand-logo"></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">Century Estofados</span></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">Gottems Móveis</span></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">Enele</span></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">Ideale</span></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">J. Marcon</span></div>
-      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/meyer.png" alt="Meyer Móveis" class="brand-logo"></div>
-      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/kuka.png" alt="Kuka Home" class="brand-logo"></div>
-      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/molufan.png" alt="Molufan" class="brand-logo"></div>
-      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/tapetah.png" alt="Tapetah" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/meyer.webp" alt="Meyer Móveis" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/kuka.webp" alt="Kuka Home" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/molufan.webp" alt="Molufan" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/tapetah.webp" alt="Tapetah" loading="lazy" class="brand-logo"></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">Lerma</span></div>
-      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/james.png" alt="Móveis James" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/james.webp" alt="Móveis James" loading="lazy" class="brand-logo"></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">Rudnick</span></div>
-      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/itamoveis.png" alt="Itamóveis" class="brand-logo"></div>
-      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/itacadeiras.png" alt="Itacadeiras" class="brand-logo"></div>
-      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/herval.png" alt="Herval" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/itamoveis.webp" alt="Itamóveis" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/itacadeiras.webp" alt="Itacadeiras" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/herval.png" alt="Herval" loading="lazy" class="brand-logo"></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">Vultis</span></div>
-      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/klassic.png" alt="Klassic" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/klassic.webp" alt="Klassic" loading="lazy" class="brand-logo"></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">Lugon</span></div>
-      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/msul.png" alt="MSul Móveis" class="brand-logo"></div>
-      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/nacional.png" alt="Nacional" class="brand-logo"></div>
-      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/mempra.png" alt="Mempra Design" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/msul.webp" alt="MSul Móveis" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/nacional.webp" alt="Nacional" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/mempra.webp" alt="Mempra Design" loading="lazy" class="brand-logo"></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">Polço Decor</span></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">Seiva</span></div>
       <div class="brand-slot" aria-hidden="true"><span class="brand-name">Samer</span></div>
@@ -1680,35 +1694,4 @@ window.initMaps = async function() {
 
     const side = reviews.slice(1, 4);
     if (side.length) {
-      document.getElementById('sideReviews').innerHTML = side.map(r => {
-        const name = r.authorAttribution?.displayName || 'Cliente';
-        const date = new Date(r.publishTime).toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' });
-        const text = r.text.length > 160 ? r.text.slice(0, 157) + '…' : r.text;
-        return `
-          <div class="review-card-small">
-            <div class="review-stars">${'★'.repeat(r.rating)}</div>
-            <p class="review-text">"${text}"</p>
-            <div class="review-author">
-              <div class="review-avatar-placeholder" style="width:36px;height:36px;font-size:14px;">${name.charAt(0).toUpperCase()}</div>
-              <div class="review-author-info">
-                <span class="review-author-name">${name}</span>
-                <span class="review-author-date">${date}</span>
-              </div>
-            </div>
-          </div>`;
-      }).join('');
-    }
-  } catch(e) {
-    console.warn('Places API:', e);
-  }
-};
-
-(function() {
-  const s = document.createElement('script');
-  s.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=initMaps&loading=async`;
-  s.async = true;
-  document.head.appendChild(s);
-})();
-</script>
-</body>
-</html>
+      document.get
