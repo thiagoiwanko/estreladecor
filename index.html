@@ -8,8 +8,11 @@
   <link rel="icon" href="assets/logo-estrela.webp" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://maps.googleapis.com">
+  <link rel="dns-prefetch" href="https://maps.gstatic.com">
   <!-- Preload LCP: hero image local -->
-  <link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/hero-mobile.webp" fetchpriority="high" media="(max-width: 768px)">
+  <link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high" media="(min-width: 769px)">
   <!-- Fontes não bloqueantes -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
@@ -1175,13 +1178,15 @@
 <main>
 <section class="hero" id="hero" aria-label="Apresentação">
   <!-- Background: opulent luxury interior -->
-  <img class="hero-bg"
-    src="assets/hero.webp"
-    fetchpriority="high"
-    alt=""
-    aria-hidden="true"
-    loading="eager"
-    fetchpriority="high">
+  <picture>
+    <source media="(max-width: 768px)" srcset="assets/hero-mobile.webp">
+    <img class="hero-bg"
+      src="assets/hero.webp"
+      fetchpriority="high"
+      alt=""
+      aria-hidden="true"
+      loading="eager">
+  </picture>
   <div class="hero-overlay"></div>
   <div class="hero-glow"></div>
   <div class="hero-grain"></div>
@@ -1726,11 +1731,31 @@ window.initMaps = async function() {
   } catch(e) { console.warn('Places API:', e); }
 };
 
+// Lazy-load Maps API: só carrega quando seção de localização entra na tela
 (function() {
-  const s = document.createElement('script');
-  s.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=initMaps&loading=async`;
-  s.async = true;
-  document.head.appendChild(s);
+  var mapsLoaded = false;
+  var mapSection = document.getElementById('gmap') || document.querySelector('.location-section') || document.querySelector('[id*="local"]');
+  if (!mapSection) {
+    // fallback: load after page interactive
+    setTimeout(function() {
+      var s = document.createElement('script');
+      s.src = 'https://maps.googleapis.com/maps/api/js?key=' + API_KEY + '&callback=initMaps&loading=async';
+      s.async = true;
+      document.head.appendChild(s);
+    }, 3000);
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    if (entries[0].isIntersecting && !mapsLoaded) {
+      mapsLoaded = true;
+      obs.disconnect();
+      var s = document.createElement('script');
+      s.src = 'https://maps.googleapis.com/maps/api/js?key=' + API_KEY + '&callback=initMaps&loading=async';
+      s.async = true;
+      document.head.appendChild(s);
+    }
+  }, { rootMargin: '300px' });
+  obs.observe(mapSection);
 })();
 </script>
 </body>
