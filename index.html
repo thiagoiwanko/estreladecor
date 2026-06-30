@@ -1705,4 +1705,33 @@ window.initMaps = async function() {
 
     const side = reviews.slice(1, 4);
     if (side.length) {
-      document.get
+            document.getElementById('sideReviews').innerHTML = side.map(r => {
+        const name = r.authorAttribution?.displayName || 'Cliente';
+        const initial = name.charAt(0).toUpperCase();
+        const date = new Date(r.publishTime).toLocaleDateString('pt-BR', {month:'long', year:'numeric'});
+        const text = r.text.length > 220 ? r.text.substring(0, 220) + '…' : r.text;
+        return `<div class="review-card-small">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"${text}"</p>
+          <div class="review-author">
+            <div class="review-avatar-placeholder" style="width:36px;height:36px;font-size:14px;">${initial}</div>
+            <div class="review-author-info">
+              <span class="review-author-name">${name}</span>
+              <span class="review-author-date">${date}</span>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+    }
+  } catch(e) { console.warn('Places API:', e); }
+};
+
+(function() {
+  const s = document.createElement('script');
+  s.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=initMaps&loading=async`;
+  s.async = true;
+  document.head.appendChild(s);
+})();
+</script>
+</body>
+</html>
