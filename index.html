@@ -3,4 +3,1725 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Estrela Decora
+  <title>Estrela Decorações | Móveis e Decorações de Alto Padrão</title>
+  <meta name="description" content="Estrela Decorações em União da Vitória/PR — móveis e decorações de alto padrão para transformar sua casa em um ambiente sofisticado e único.">
+  <link rel="icon" href="assets/logo-estrela.webp" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://maps.googleapis.com">
+  <link rel="dns-prefetch" href="https://maps.gstatic.com">
+  <!-- Preload LCP: hero image local -->
+  <link rel="preload" as="image" href="assets/hero-mobile.webp" fetchpriority="high" media="(max-width: 768px)">
+  <link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high" media="(min-width: 769px)">
+  <!-- Fontes não bloqueantes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <style>
+    @font-face {
+      font-family: 'Rastanty Cortez';
+      src: url('assets/fonts/rastanty-cortez.woff') format('woff'),
+           url('assets/fonts/rastanty-cortez.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    img, video { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Tokens ─────────────────────────────────────── */
+    :root {
+      --black:       #080808;
+      --dark:        #111111;
+      --dark-2:      #1C1C1C;
+      --dark-3:      #2A2A2A;
+      --gold:        #C9A84C;
+      --gold-light:  #E8C97A;
+      --gold-pale:   #F5E8C4;
+      --silver:      #B4B4BE;
+      --silver-light:#E4E4EC;
+      --white:       #FFFFFF;
+      --off:         #F8F6F2;
+      --muted:       rgba(255,255,255,0.45);
+      --border-dark: rgba(201,168,76,0.18);
+      --border-light:rgba(0,0,0,0.08);
+      --instagram:   linear-gradient(135deg, #833ab4 0%, #c13584 34%, #e1306c 64%, #fd8d32 100%);
+
+      --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      --font-body:    'Jost', system-ui, -apple-system, sans-serif;
+
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --rad: 12px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--dark);
+      line-height: 1.65;
+      overflow-x: hidden;
+      font-weight: 400;
+    }
+
+    /* ── Utility ────────────────────────────────────── */
+    .gold { color: var(--gold); }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── Nav ─────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 14px clamp(20px, 5vw, 60px);
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    }
+    .nav.scrolled {
+      background: rgba(8,8,8,0.96);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 rgba(201,168,76,0.2);
+    }
+
+    /* Logo SVG mark */
+    .nav-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 12px;
+      background: rgba(8,8,8,0.35);
+      backdrop-filter: blur(14px);
+      transition: background 0.4s, border-color 0.4s, box-shadow 0.4s;
+    }
+    .nav.scrolled .nav-logo-wrap {
+      background: transparent;
+      border-color: transparent;
+      backdrop-filter: none;
+    }
+    .nav-logo-img {
+      height: clamp(44px, 5vw, 64px);
+      width: auto;
+      display: block;
+    }
+
+    .nav-cta {
+      display: flex;
+      gap: 10px;
+    }
+    .nav-btn {
+      height: 40px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: none;
+    }
+    .nav-btn:hover { transform: translateY(-2px); }
+    .nav-btn.wpp {
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .nav-btn.wpp:hover {
+      background: rgba(37,211,102,0.12);
+      border-color: rgba(37,211,102,0.4);
+      color: #fff;
+    }
+    .nav-btn.insta {
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .nav-btn.insta:hover {
+      background: rgba(225,48,108,0.12);
+      border-color: rgba(225,48,108,0.4);
+      color: #fff;
+    }
+    .nav.scrolled .nav-btn.wpp,
+    .nav.scrolled .nav-btn.insta {
+      border-color: rgba(201,168,76,0.25);
+      color: rgba(255,255,255,0.75);
+    }
+    .nav-btn svg { width: 16px; height: 16px; }
+
+    /* ── Hero ─────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: flex-end;
+      padding-top: clamp(86px, 12vh, 140px);
+      padding-bottom: clamp(60px, 10vh, 110px);
+      overflow: hidden;
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 0.62;
+      filter: saturate(0.78) contrast(1.06);
+    }
+
+    /* Gradient: cinematic, lets the image breathe on the right */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(110deg,
+          rgba(8,8,8,0.90) 0%,
+          rgba(8,8,8,0.65) 38%,
+          rgba(8,8,8,0.22) 68%,
+          transparent 100%),
+        linear-gradient(0deg,
+          rgba(8,8,8,0.88) 0%,
+          rgba(8,8,8,0.18) 42%,
+          transparent 62%);
+    }
+
+    /* Gold vignette glow — top edge warm light leak */
+    .hero-glow {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 70% 40% at 72% 0%, rgba(201,168,76,0.10) 0%, transparent 100%),
+        radial-gradient(ellipse 50% 30% at 100% 50%, rgba(201,168,76,0.06) 0%, transparent 100%);
+    }
+
+    /* Film grain texture */
+    .hero-grain {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      opacity: 0.042;
+      mix-blend-mode: screen;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+    }
+
+    /* Decorative gold corner ornaments */
+    .hero-corners {
+      position: absolute;
+      inset: clamp(20px, 4vw, 48px);
+      z-index: 3;
+      pointer-events: none;
+    }
+    .hero-corners::before,
+    .hero-corners::after {
+      content: '';
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      border-color: rgba(201,168,76,0.45);
+      border-style: solid;
+    }
+    .hero-corners::before {
+      top: 0; left: 0;
+      border-width: 1px 0 0 1px;
+    }
+    .hero-corners::after {
+      bottom: 0; right: 0;
+      border-width: 0 1px 1px 0;
+    }
+    .hero-corner-tr, .hero-corner-bl {
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      border-color: rgba(201,168,76,0.45);
+      border-style: solid;
+    }
+    .hero-corner-tr { top: 0; right: 0; border-width: 1px 1px 0 0; }
+    .hero-corner-bl { bottom: 0; left: 0; border-width: 0 0 1px 1px; }
+
+    /* Gold shimmer line at bottom */
+    .hero-line {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent 100%);
+      z-index: 3;
+      opacity: 0.55;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(1180px, calc(100% - clamp(32px,8vw,120px)));
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.55;
+    }
+
+    .hero-headline {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(54px, 8vw, 116px);
+      font-weight: 500;
+      line-height: 0.9;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+      max-width: 860px;
+      color: #fff8e8;
+    }
+
+    .hero-sub {
+      font-size: clamp(15px, 1.5vw, 18px);
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      max-width: 460px;
+      margin-bottom: 48px;
+      line-height: 1.75;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 64px;
+    }
+
+    .btn-hero {
+      height: 56px;
+      padding: 0 32px;
+      border-radius: 4px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease);
+      white-space: nowrap;
+    }
+    .btn-hero:hover { transform: translateY(-3px); }
+    .btn-hero svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      color: var(--black);
+      box-shadow: 0 16px 40px rgba(201,168,76,0.35);
+    }
+    .btn-gold:hover { box-shadow: 0 20px 50px rgba(201,168,76,0.5); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      box-shadow: 0 0 24px rgba(201,168,76,0.15);
+    }
+
+    /* Stats */
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      gap: clamp(16px, 3vw, 32px);
+      flex-wrap: wrap;
+    }
+    .stat-divider {
+      width: 1px;
+      height: 36px;
+      background: rgba(201,168,76,0.3);
+    }
+    .stat-google {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 16px;
+      padding: 16px 24px;
+      backdrop-filter: blur(14px);
+      text-align: center;
+    }
+    .stat-google-logo { width: 38px; height: 38px; flex-shrink: 0; }
+    .stat-google-body { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+    .stat-google-score {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      line-height: 1;
+    }
+    .stat-google-num {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.2vw, 40px);
+      font-weight: 700;
+      color: var(--white);
+    }
+    .stat-google-stars {
+      color: var(--gold);
+      font-size: 15px;
+      letter-spacing: 1px;
+    }
+    .stat-google-count {
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.06em;
+    }
+    .stat-google-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 2px;
+    }
+
+    /* ── Section Header ──────────────────────────────── */
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--dark);
+    }
+    .section-title.light { color: var(--white); }
+    .section-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    /* ── Brands ──────────────────────────────────────── */
+    .brands {
+      background: var(--dark);
+      padding: clamp(52px, 8vw, 88px) 0;
+      overflow: hidden;
+    }
+    .brands-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      padding: 0 clamp(24px, 6vw, 80px);
+      margin-bottom: 48px;
+    }
+    .brands-stat { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+    .brands-num {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 6vw, 80px);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 2px;
+      perspective: 400px;
+    }
+    .brands-num-plus {
+      display: inline-block;
+    }
+    .brands-num-digits {
+      display: inline-block;
+      transform-style: preserve-3d;
+      transition: none;
+    }
+    .brands-num-digits.flip {
+      animation: flipDigit 0.06s ease-in-out;
+    }
+    @keyframes flipDigit {
+      0%   { transform: rotateX(0deg); }
+      50%  { transform: rotateX(90deg); opacity: 0.3; }
+      100% { transform: rotateX(0deg); opacity: 1; }
+    }
+    .brands-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--silver);
+    }
+    .brands-desc {
+      font-size: clamp(14px, 1.4vw, 16px);
+      color: rgba(255,255,255,0.45);
+      max-width: 320px;
+      text-align: right;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .marquee-outer {
+      position: relative;
+      overflow: hidden;
+      mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      -webkit-mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .marquee-track {
+      display: flex;
+      gap: 0;
+      width: max-content;
+      animation: marquee 32s linear infinite;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .brand-slot {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 36px;
+      height: 80px;
+      flex-shrink: 0;
+      border-right: 1px solid rgba(201,168,76,0.08);
+    }
+    .brand-name {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      white-space: nowrap;
+      transition: color 0.3s;
+    }
+    .brand-slot:hover .brand-name {
+      color: var(--gold);
+    }
+    .brand-logo {
+      height: 48px;
+      width: auto;
+      max-width: 160px;
+      object-fit: contain;
+      opacity: 0.55;
+      filter: brightness(0) invert(1);
+      transition: opacity 0.3s, filter 0.3s;
+    }
+    .brand-slot:hover .brand-logo {
+      opacity: 1;
+      filter: brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(5deg) brightness(1.1);
+    }
+
+    /* ── Diferenciais ────────────────────────────────── */
+    .diferenciais {
+      background: var(--off);
+      padding: clamp(72px, 10vw, 120px) clamp(24px, 6vw, 80px);
+    }
+    .diferenciais-header { text-align: center; margin-bottom: clamp(48px, 7vw, 80px); }
+    .diferenciais-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 2px;
+      max-width: 1080px;
+      margin: 0 auto;
+      background: rgba(0,0,0,0.06);
+    }
+    .dif-card { grid-column: span 2; }
+    .dif-card:nth-child(4) { grid-column: 1 / span 3; }
+    .dif-card:nth-child(5) { grid-column: 4 / span 3; }
+    .dif-card {
+      background: var(--white);
+      padding: clamp(32px, 4vw, 52px) clamp(24px, 3vw, 40px);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: background 0.3s;
+    }
+    .dif-card:hover { background: var(--dark); }
+    .dif-card:hover .dif-icon path,
+    .dif-card:hover .dif-icon rect,
+    .dif-card:hover .dif-icon circle,
+    .dif-card:hover .dif-icon line,
+    .dif-card:hover .dif-icon polyline,
+    .dif-card:hover .dif-icon polygon { stroke: var(--gold); }
+    .dif-card:hover .dif-title { color: var(--white); }
+    .dif-card:hover .dif-desc { color: rgba(255,255,255,0.5); }
+    .dif-icon {
+      width: 36px;
+      height: 36px;
+      color: var(--gold);
+    }
+    .dif-icon path, .dif-icon rect, .dif-icon circle, .dif-icon line,
+    .dif-icon polyline, .dif-icon polygon {
+      stroke: var(--dark);
+      transition: stroke 0.3s;
+    }
+    .dif-title {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 600;
+      color: var(--dark);
+      transition: color 0.3s;
+      line-height: 1.25;
+    }
+    .dif-desc {
+      font-size: 15px;
+      color: var(--silver);
+      line-height: 1.7;
+      font-weight: 300;
+      transition: color 0.3s;
+    }
+
+    /* ── Showroom / Instagram ──────────────────────────── */
+    .showroom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
+    }
+    .showroom-copy {
+      background: var(--black);
+      color: var(--white);
+      padding: clamp(60px, 9vw, 100px) clamp(32px, 6vw, 80px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 28px;
+    }
+    .showroom-body {
+      font-size: clamp(15px, 1.4vw, 17px);
+      color: rgba(255,255,255,0.55);
+      line-height: 1.8;
+      font-weight: 300;
+      max-width: 440px;
+    }
+    .showroom-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(201,168,76,0.35);
+      padding-bottom: 4px;
+      width: fit-content;
+      transition: gap 0.2s, border-color 0.2s;
+    }
+    .showroom-cta:hover { gap: 16px; border-color: var(--gold); }
+    .showroom-cta svg { width: 16px; height: 16px; }
+
+    .instagram-panel {
+      background: var(--dark-2);
+      position: relative;
+      min-height: 500px;
+      overflow: hidden;
+    }
+    .behold-wrap {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      padding-top: 24px;
+      padding-right: 24px;
+    }
+    .behold-wrap behold-widget {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .instagram-badge {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 2;
+      background: rgba(8,8,8,0.85);
+      border: 1px solid var(--border-dark);
+      border-radius: 8px;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      backdrop-filter: blur(10px);
+    }
+    .instagram-badge svg { width: 16px; height: 16px; }
+
+    /* ── Reviews ────────────────────────────────────── */
+    .reviews {
+      background: var(--black);
+      color: var(--white);
+      padding: clamp(80px, 11vw, 140px) clamp(24px, 6vw, 80px);
+    }
+    .reviews-header {
+      text-align: center;
+      margin-bottom: clamp(52px, 8vw, 88px);
+    }
+    .reviews-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 1080px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    /* Big hero review */
+    .review-hero-card {
+      background: var(--dark-2);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--rad);
+      padding: clamp(36px, 4vw, 52px) clamp(28px, 3vw, 44px);
+      position: relative;
+      overflow: hidden;
+    }
+    .review-hero-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-family: var(--font-display);
+      font-size: 140px;
+      color: var(--gold);
+      opacity: 0.12;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .review-stars {
+      color: var(--gold);
+      font-size: 18px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    .review-text {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(17px, 1.8vw, 22px);
+      line-height: 1.65;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .review-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border-dark);
+    }
+    .review-avatar-placeholder {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--black);
+      flex-shrink: 0;
+    }
+    .review-author-info { display: flex; flex-direction: column; gap: 2px; }
+    .review-author-name {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--white);
+    }
+    .review-author-date {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.04em;
+    }
+
+    /* Side review stack */
+    .review-cards-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .review-card-small {
+      background: var(--dark-2);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--rad);
+      padding: 22px 26px;
+      transition: border-color 0.3s;
+    }
+    .review-card-small:hover { border-color: rgba(201,168,76,0.4); }
+    .review-card-small .review-text {
+      font-family: var(--font-body);
+      font-style: normal;
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 16px;
+    }
+    .review-card-small .review-stars {
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+    .reviews-cta {
+      text-align: center;
+      margin-top: 52px;
+    }
+    .btn-ghost-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      height: 48px;
+      padding: 0 28px;
+      border-radius: 4px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: transparent;
+      transition: background 0.25s, color 0.25s;
+    }
+    .btn-ghost-gold:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* ── Location ────────────────────────────────────── */
+    .location {
+      background: var(--off);
+      padding: clamp(72px, 10vw, 120px) clamp(24px, 6vw, 80px);
+    }
+    .location-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      max-width: 1080px;
+      margin: 0 auto;
+      align-items: center;
+    }
+    .location-copy { display: flex; flex-direction: column; gap: 28px; }
+    .location-details {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .loc-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .loc-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .loc-icon-wrap svg { width: 20px; height: 20px; color: var(--gold); }
+    .loc-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 2px;
+    }
+    .loc-value {
+      font-size: 15px;
+      color: var(--dark);
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    .loc-value a { color: var(--dark); }
+    .loc-value a:hover { color: var(--gold); }
+
+    .hours-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 6px;
+    }
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      color: var(--dark);
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      max-width: 280px;
+    }
+    .hours-row span:first-child { color: var(--silver); font-size: 12px; letter-spacing: 0.04em; }
+
+    .map-frame {
+      border-radius: var(--rad);
+      overflow: hidden;
+      height: 400px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.15);
+      border: 1px solid var(--border-light);
+    }
+    .map-frame iframe, #gmap {
+      width: 100%; height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* ── CTA Section ─────────────────────────────────── */
+    .cta-section {
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+      padding: clamp(80px, 12vw, 140px) clamp(24px, 6vw, 80px);
+      text-align: center;
+      color: var(--white);
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-line-top, .cta-line-bot {
+      position: absolute;
+      left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.4;
+    }
+    .cta-line-top { top: 0; }
+    .cta-line-bot { bottom: 0; }
+    .cta-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+    .cta-eyebrow { margin-bottom: 24px; }
+    .cta-h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5.5vw, 72px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .cta-h2 em { font-style: italic; color: var(--gold); }
+    .cta-sub {
+      font-size: clamp(15px, 1.5vw, 18px);
+      color: rgba(255,255,255,0.55);
+      font-weight: 300;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .cta-contact-info {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .cta-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 300;
+    }
+    .cta-contact-item svg { width: 16px; height: 16px; color: var(--gold); }
+
+    /* ── Footer ─────────────────────────────────────── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid rgba(201,168,76,0.12);
+      padding: 28px clamp(24px, 5vw, 60px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .footer-brand span { color: var(--gold); font-style: italic; }
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.04em;
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-links a {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      transition: color 0.2s;
+      letter-spacing: 0.04em;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── FAB bar (mobile) ────────────────────────────── */
+    .fab-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 200;
+      background: var(--black);
+      border-top: 1px solid rgba(201,168,76,0.2);
+      padding: 10px 16px;
+      gap: 10px;
+    }
+    .fab-btn {
+      flex: 1;
+      height: 48px;
+      border-radius: 6px;
+      border: none;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .fab-btn svg { width: 18px; height: 18px; }
+    .fab-btn.wpp { background: #25D366; color: #fff; }
+    .fab-btn.tel { background: var(--dark-2); color: var(--white); border: 1px solid rgba(201,168,76,0.3); }
+
+    /* ── Responsive ─────────────────────────────────── */
+    @media (max-width: 900px) {
+      .showroom { grid-template-columns: 1fr; }
+      .showroom-copy { order: -1; }
+      .instagram-panel { min-height: auto; order: 0; }
+      .behold-wrap { min-height: 420px; padding: 16px 16px 0; }
+      .reviews-inner { grid-template-columns: 1fr; gap: 24px; }
+      .location-inner { grid-template-columns: 1fr; gap: 36px; }
+      .map-frame { height: 320px; }
+      .diferenciais-grid { grid-template-columns: repeat(4, 1fr); }
+      .dif-card { grid-column: span 2 !important; }
+      .dif-card:nth-child(4), .dif-card:nth-child(5) { grid-column: span 2 !important; }
+      .brands-header { flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+      .brands-stat { align-items: center; }
+      .brands-desc { text-align: center; max-width: 100%; }
+      .cta-contact-info { gap: 16px; }
+    }
+
+    @media (max-width: 640px) {
+      /* Nav */
+      .nav-cta { display: none; }
+      .nav { min-height: 64px; padding: 10px 16px; }
+      .nav-logo-wrap { padding: 8px 12px; gap: 10px; border-radius: 10px; }
+      .nav-logo-icon { height: 40px; }
+      .nav-logo-estrela { font-size: 18px; }
+      .nav-logo-decor { font-size: 11px; }
+
+      /* FAB */
+      .fab-bar { display: flex; }
+      body { padding-bottom: 76px; }
+
+      /* Hero */
+      .hero { min-height: 75svh; padding-bottom: clamp(48px, 10vh, 80px); }
+      .hero-content { width: calc(100% - 32px); }
+      .hero-eyebrow { font-size: 10px; margin-bottom: 16px; }
+      .hero-eyebrow::before, .hero-eyebrow::after { width: 16px; }
+      .hero-headline { font-size: clamp(42px, 13vw, 64px); line-height: 0.92; margin-bottom: 18px; }
+      .hero-sub { font-size: 14px; margin-bottom: 32px; max-width: 100%; }
+      .hero-actions { flex-direction: column; gap: 10px; margin-bottom: 40px; }
+      .btn-hero { width: 100%; justify-content: center; height: 52px; font-size: 13px; }
+      .hero-stats { gap: 10px; flex-wrap: wrap; justify-content: center; }
+      .stat-divider { display: none; }
+      .stat-google { padding: 10px 14px; }
+      .stat-google-logo { width: 30px; height: 30px; }
+      .stat-google-num { font-size: 24px; }
+      .stat-google-stars { font-size: 12px; }
+
+      /* Brands */
+      .brands-num { font-size: clamp(40px, 12vw, 60px); }
+
+      /* Diferenciais */
+      .diferenciais { padding: 52px 16px; }
+      .diferenciais-grid { grid-template-columns: 1fr 1fr !important; gap: 2px; }
+      .dif-card { grid-column: span 1 !important; padding: 28px 20px; }
+      .dif-card:nth-child(5) { grid-column: 1 / -1 !important; }
+
+      /* Showroom / Instagram */
+      .showroom-copy { padding: 48px 20px; }
+      .behold-wrap { min-height: 360px; padding: 12px 12px 0; }
+
+      /* Reviews */
+      .reviews { padding: 60px 20px; }
+      .review-hero-card { padding: 28px 22px; }
+      .review-hero-card::before { font-size: 100px; }
+      .review-text { font-size: 16px; }
+      .reviews-cta { margin-top: 36px; }
+
+      /* Location */
+      .location { padding: 56px 20px; }
+      .map-frame { height: 260px; }
+      .hours-row { max-width: 100%; }
+
+      /* CTA */
+      .cta-section { padding: 72px 20px; }
+      .cta-buttons { flex-direction: column; align-items: stretch; }
+      .cta-buttons .btn-hero { height: 52px; font-size: 13px; }
+      .cta-contact-info { flex-direction: column; gap: 10px; align-items: center; }
+
+      /* Footer */
+      footer { flex-direction: column; align-items: center; text-align: center; gap: 10px; padding: 24px 20px; }
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 12px; }
+      .footer-copy { font-size: 11px; }
+    }
+
+    @media (max-width: 420px) {
+      .hero-headline { font-size: clamp(36px, 12vw, 52px); }
+      .diferenciais-grid { grid-template-columns: 1fr !important; }
+      .dif-card { grid-column: 1 / -1 !important; }
+      .stat-google { flex-direction: column; gap: 6px; padding: 10px; }
+      .stat-google-score { align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Nav ───────────────────────────────────────────── -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo-wrap" aria-label="Estrela Decorações — início">
+    <img src="assets/logo-estrela.webp" alt="Estrela Decorações" class="nav-logo-img">
+  </a>
+  <div class="nav-cta">
+    <a href="https://wa.me/554235233523?text=Olá!%20Vim%20pelo%20site%20da%20Estrela%20Decorações%20e%20gostaria%20de%20saber%20mais." class="nav-btn wpp" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+    <a href="https://www.instagram.com/estreladecor/" class="nav-btn insta" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      Instagram
+    </a>
+  </div>
+</nav>
+
+<!-- ── Hero ───────────────────────────────────────────── -->
+<main>
+<section class="hero" id="hero" aria-label="Apresentação">
+  <!-- Background: opulent luxury interior -->
+  <picture>
+    <source media="(max-width: 768px)" srcset="assets/hero-mobile.webp">
+    <img class="hero-bg"
+      src="assets/hero.webp"
+      fetchpriority="high"
+      alt=""
+      aria-hidden="true"
+      loading="eager">
+  </picture>
+  <div class="hero-overlay"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-corners">
+    <div class="hero-corner-tr"></div>
+    <div class="hero-corner-bl"></div>
+  </div>
+  <div class="hero-line"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Móveis e Decorações em União da Vitória</div>
+    <h1 class="hero-headline">
+      Estrela<br>Decorações
+    </h1>
+    <p class="hero-sub">
+      Ambientes elegantes, peças selecionadas e atendimento próximo para transformar sua casa com sofisticação.
+    </p>
+    <div class="hero-actions">
+      <a href="https://wa.me/554235233523?text=Olá!%20Vim%20pelo%20site%20da%20Estrela%20Decorações%20e%20gostaria%20de%20conhecer%20mais." class="btn-hero btn-gold" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chamar no WhatsApp
+      </a>
+      <a href="https://www.instagram.com/estreladecor/" class="btn-hero btn-outline" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        Ver no Instagram
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-google" id="statGoogle" aria-label="Avaliação Google">
+        <svg class="stat-google-logo" viewBox="0 0 48 48">
+          <defs>
+            <linearGradient id="goldG" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#F5E8C4"/>
+              <stop offset="45%" stop-color="#C9A84C"/>
+              <stop offset="100%" stop-color="#9A7A2A"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#goldG)" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+          <path fill="url(#goldG)" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+          <path fill="url(#goldG)" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+          <path fill="url(#goldG)" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.29-8.16 2.29-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        </svg>
+        <div class="stat-google-body">
+          <span class="stat-google-label">Nossa nota no Google</span>
+          <div class="stat-google-score">
+            <span class="stat-google-num" id="googleNum">4.9</span>
+            <span class="stat-google-stars">★★★★★</span>
+          </div>
+          <span class="stat-google-count" id="googleCount">carregando avaliações…</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Brands ─────────────────────────────────────────── -->
+<section class="brands" aria-label="Marcas parceiras">
+  <div class="brands-header reveal">
+    <div class="brands-stat">
+      <span class="brands-num" id="brandsNum"><span class="brands-num-plus">+</span><span class="brands-num-digits" id="brandsDigits">0</span></span>
+      <span class="brands-label">Marcas de alto padrão</span>
+    </div>
+    <p class="brands-desc">Algumas das marcas que você conhece e confia, disponíveis aqui na Estrela Decorações</p>
+  </div>
+
+  <div class="marquee-outer">
+    <div class="marquee-track" id="marqueeTrack">
+      <!-- Set 1 -->
+      <div class="brand-slot"><img src="assets/brands/viastar.webp" alt="Via Star" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/saocarlos.webp" alt="Tapetes São Carlos" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/pilati.webp" alt="Pilati" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/belldesign.webp" alt="Bell Design" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/buriti.webp" alt="Buriti" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/malvas.webp" alt="Malvas" loading="lazy" class="brand-logo"></div>
+      
+      <div class="brand-slot"><img src="assets/brands/armil.webp" alt="Armil" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/ceval.webp" alt="Ceval" loading="lazy" class="brand-logo"></div>
+      
+      <div class="brand-slot"><img src="assets/brands/dallacosta.webp" alt="Dalla Costa" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/century.webp" alt="Century Estofados" loading="lazy" class="brand-logo"></div>
+      
+      <div class="brand-slot"><img src="assets/brands/enele.webp" alt="Enele" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/ideale.webp" alt="Ideale" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/jmarcon.webp" alt="J. Marcon" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/meyer.webp" alt="Meyer Móveis" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/kuka.webp" alt="Kuka Home" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/molufan.webp" alt="Molufan" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/tapetah.webp" alt="Tapetah" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/lerma.webp" alt="Lerma" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/james.webp" alt="Móveis James" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/rudnick.webp" alt="Rudnick" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/itamoveis.webp" alt="Itamóveis" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/itacadeiras.webp" alt="Itacadeiras" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/herval.webp" alt="Herval" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/vultis.webp" alt="Vultis" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/klassic.webp" alt="Klassic" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/lugon.webp" alt="Lugon" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/msul.webp" alt="MSul Móveis" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/nacional.webp" alt="Nacional" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/mempra.webp" alt="Mempra Design" loading="lazy" class="brand-logo"></div>
+      
+      <div class="brand-slot"><img src="assets/brands/seiva.webp" alt="Seiva" loading="lazy" class="brand-logo"></div>
+      
+      <div class="brand-slot"><img src="assets/brands/recliners.webp" alt="Recliners" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/refinatto.webp" alt="Refinatto" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/sier.webp" alt="Sier Móveis" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/temda.webp" alt="Temda" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot"><img src="assets/brands/torobianco.webp" alt="Toro Bianco Estofados" loading="lazy" class="brand-logo"></div>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/viastar.webp" alt="Via Star" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/saocarlos.webp" alt="Tapetes São Carlos" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/pilati.webp" alt="Pilati" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/belldesign.webp" alt="Bell Design" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/buriti.webp" alt="Buriti" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/malvas.webp" alt="Malvas" loading="lazy" class="brand-logo"></div>
+      
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/armil.webp" alt="Armil" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/ceval.webp" alt="Ceval" loading="lazy" class="brand-logo"></div>
+      
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/dallacosta.webp" alt="Dalla Costa" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/century.webp" alt="Century Estofados" loading="lazy" class="brand-logo"></div>
+      
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/enele.webp" alt="Enele" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/ideale.webp" alt="Ideale" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/jmarcon.webp" alt="J. Marcon" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/meyer.webp" alt="Meyer Móveis" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/kuka.webp" alt="Kuka Home" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/molufan.webp" alt="Molufan" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/tapetah.webp" alt="Tapetah" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/lerma.webp" alt="Lerma" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/james.webp" alt="Móveis James" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/rudnick.webp" alt="Rudnick" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/itamoveis.webp" alt="Itamóveis" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/itacadeiras.webp" alt="Itacadeiras" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/herval.webp" alt="Herval" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/vultis.webp" alt="Vultis" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/klassic.webp" alt="Klassic" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/lugon.webp" alt="Lugon" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/msul.webp" alt="MSul Móveis" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/nacional.webp" alt="Nacional" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/mempra.webp" alt="Mempra Design" loading="lazy" class="brand-logo"></div>
+      
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/seiva.webp" alt="Seiva" loading="lazy" class="brand-logo"></div>
+      
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/recliners.webp" alt="Recliners" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/refinatto.webp" alt="Refinatto" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/sier.webp" alt="Sier Móveis" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/temda.webp" alt="Temda" loading="lazy" class="brand-logo"></div>
+      <div class="brand-slot" aria-hidden="true"><img src="assets/brands/torobianco.webp" alt="Toro Bianco Estofados" loading="lazy" class="brand-logo"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Diferenciais ───────────────────────────────────── -->
+<section class="diferenciais" aria-label="Nossos diferenciais">
+  <div class="diferenciais-header reveal">
+    <div class="section-eyebrow">Por que nos escolher</div>
+    <h2 class="section-title">A experiência <em>Estrela Decorações</em></h2>
+  </div>
+  <div class="diferenciais-grid">
+    <div class="dif-card reveal">
+      <svg class="dif-icon" viewBox="0 0 36 36" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 4l2.5 7.5H28l-6.5 4.5 2.5 7.5L18 19l-6 4.5 2.5-7.5L9 11.5h7.5z"/><path d="M6 30h24"/>
+      </svg>
+      <div class="dif-title">Curadoria Refinada</div>
+      <div class="dif-desc">Móveis, objetos e acabamentos pensados para compor salas, quartos, halls e espaços gourmet com presença.</div>
+    </div>
+    <div class="dif-card reveal">
+      <svg class="dif-icon" viewBox="0 0 36 36" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="14" width="14" height="14" rx="1.5"/><rect x="19" y="8" width="14" height="20" rx="1.5"/>
+        <line x1="3" y1="32" x2="33" y2="32"/><line x1="9" y1="14" x2="9" y2="8"/><line x1="9" y1="8" x2="19" y2="8"/>
+      </svg>
+      <div class="dif-title">Ambientes Completos</div>
+      <div class="dif-desc">Combinações de texturas, metais, madeira, tecidos e iluminação para uma decoração pronta para morar.</div>
+    </div>
+    <div class="dif-card reveal">
+      <svg class="dif-icon" viewBox="0 0 36 36" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="14" cy="12" r="5"/><path d="M4 30c0-5.5 4.5-10 10-10s10 4.5 10 10"/>
+        <path d="M24 8l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="dif-title">Atendimento Pessoal</div>
+      <div class="dif-desc">Orientação para escolher peças que conversam com seu estilo, sua rotina e o padrão do seu imóvel.</div>
+    </div>
+    <div class="dif-card reveal">
+      <svg class="dif-icon" viewBox="0 0 36 36" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 28l6-6 4 4 8-10 6 8"/><rect x="4" y="6" width="28" height="22" rx="2"/>
+        <line x1="4" y1="12" x2="32" y2="12"/>
+      </svg>
+      <div class="dif-title">Consultoria de Arquiteta e Decoradoras</div>
+      <div class="dif-desc">Ambientes planejados com olhar técnico e sensível, unindo estética, funcionalidade e sofisticação.</div>
+    </div>
+    <div class="dif-card reveal">
+      <svg class="dif-icon" viewBox="0 0 36 36" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 20l7-7 5 5 7-8 7 7"/><circle cx="28" cy="10" r="3"/><line x1="5" y1="30" x2="31" y2="30"/>
+      </svg>
+      <div class="dif-title">Seu Estilo, Visual Único</div>
+      <div class="dif-desc">Sua casa com identidade própria — cada detalhe escolhido para refletir quem você é e como você vive.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Showroom / Instagram ──────────────────────────── -->
+<section class="showroom" aria-label="Nosso showroom e Instagram">
+  <div class="showroom-copy">
+    <div class="section-eyebrow">Nosso Showroom</div>
+    <h2 class="section-title light">Venha viver a <em>experiência</em> pessoalmente</h2>
+    <p class="showroom-body">
+      Nossa loja em União da Vitória é um convite à inspiração. Ambientes montados com cuidado,
+      onde você pode tocar, sentir e imaginar cada peça no seu lar. Atendimento personalizado
+      para ajudar você a criar espaços que refletem quem você é.
+    </p>
+    <a href="https://www.instagram.com/estreladecor/" class="showroom-cta" target="_blank" rel="noopener">
+      Ver mais no Instagram
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+  <div class="instagram-panel">
+    <div class="behold-wrap">
+      <behold-widget feed-id="YwXxyKs1NdzTVgnnFIgJ"></behold-widget>
+    </div>
+    <a href="https://www.instagram.com/estreladecor/" target="_blank" rel="noopener" class="instagram-badge">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      @estreladecor
+    </a>
+  </div>
+</section>
+
+<!-- ── Reviews ────────────────────────────────────────── -->
+<section class="reviews" aria-label="Avaliações dos clientes">
+  <div class="reviews-header reveal">
+    <div class="section-eyebrow">Google Reviews</div>
+    <h2 class="section-title light">O que nossos clientes <em>dizem</em></h2>
+  </div>
+  <div class="reviews-inner" id="reviewsInner">
+    <!-- Hero review placeholder -->
+    <div class="review-hero-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text" id="heroReviewText">
+        "Atendimento impecável e produtos de altíssima qualidade. Encontrei exatamente o que procurava para decorar minha sala. Superou todas as expectativas!"
+      </p>
+      <div class="review-author">
+        <div class="review-avatar-placeholder" id="heroReviewInitial">C</div>
+        <div class="review-author-info">
+          <span class="review-author-name" id="heroReviewName">Cliente Estrela Decorações</span>
+          <span class="review-author-date" id="heroReviewDate">Google Reviews</span>
+        </div>
+      </div>
+    </div>
+    <!-- Side reviews placeholder -->
+    <div class="review-cards-wrap reveal" id="sideReviews">
+      <div class="review-card-small">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Móveis lindos e equipe muito atenciosa. Recomendo demais para quem quer qualidade com bom preço."</p>
+        <div class="review-author">
+          <div class="review-avatar-placeholder" style="width:36px;height:36px;font-size:14px;">M</div>
+          <div class="review-author-info">
+            <span class="review-author-name">Maria S.</span>
+            <span class="review-author-date">Google Reviews</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card-small">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Entrega e montagem rápidos e sem complicação. Os móveis ficaram perfeitos no ambiente. Voltarei com certeza!"</p>
+        <div class="review-author">
+          <div class="review-avatar-placeholder" style="width:36px;height:36px;font-size:14px;">J</div>
+          <div class="review-author-info">
+            <span class="review-author-name">José A.</span>
+            <span class="review-author-date">Google Reviews</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card-small">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Variedade impressionante e preços justos. O atendimento diferenciado faz toda a diferença na hora de escolher."</p>
+        <div class="review-author">
+          <div class="review-avatar-placeholder" style="width:36px;height:36px;font-size:14px;">A</div>
+          <div class="review-author-info">
+            <span class="review-author-name">Ana P.</span>
+            <span class="review-author-date">Google Reviews</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="reviews-cta">
+    <a href="https://search.google.com/local/reviews?placeid=ChIJnwyqN_Bh5pQRKkkeTL8LPUc" target="_blank" rel="noopener" class="btn-ghost-gold">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      Ver todas as avaliações no Google
+    </a>
+  </div>
+</section>
+
+<!-- ── Location ──────────────────────────────────────── -->
+<section class="location" aria-label="Localização e horários">
+  <div class="location-inner">
+    <div class="location-copy reveal">
+      <div class="section-eyebrow">Visite-nos</div>
+      <h2 class="section-title">Venha nos <em>conhecer</em></h2>
+      <div class="location-details">
+        <div class="loc-item">
+          <div class="loc-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="loc-label">Endereço</div>
+            <div class="loc-value">
+              <a href="https://maps.google.com/?q=R.+Ipiranga,+35+União+da+Vitória+PR" target="_blank" rel="noopener">
+                R. Ipiranga, 35 — Centro<br>União da Vitória/PR
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="loc-item">
+          <div class="loc-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.79 9.11a19.79 19.79 0 01-3.07-8.68A2 2 0 012.7 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.67a16 16 0 006 6l1.06-1.06a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="loc-label">Telefone / WhatsApp</div>
+            <div class="loc-value">
+              <a href="tel:+554235233523">(42) 3523-3523</a>
+            </div>
+          </div>
+        </div>
+        <div class="loc-item">
+          <div class="loc-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="loc-label">Horário de Funcionamento</div>
+            <div class="loc-value">
+              <div class="hours-grid">
+                <div class="hours-row"><span>Seg — Sex</span><span>9h às 18h30</span></div>
+                <div class="hours-row"><span>Sábado</span><span>9h às 13h</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="map-frame">
+      <div id="gmap"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────── -->
+<section class="cta-section" aria-label="Fale conosco">
+  <div class="cta-line-top"></div>
+  <div class="cta-line-bot"></div>
+  <div class="cta-inner reveal">
+    <div class="section-eyebrow cta-eyebrow" style="justify-content:center;">Pronto para transformar seu lar?</div>
+    <h2 class="cta-h2">Venha nos visitar ou <em>fale agora</em></h2>
+    <p class="cta-sub">Nossa equipe está pronta para ajudar você a encontrar os móveis e decorações perfeitos para cada ambiente.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/554235233523?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20Estrela%20Decorações." class="btn-hero btn-gold" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chamar no WhatsApp
+      </a>
+      <a href="tel:+554235233523" class="btn-hero btn-outline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.79 9.11a19.79 19.79 0 01-3.07-8.68A2 2 0 012.7 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.67a16 16 0 006 6l1.06-1.06a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Ligar Agora
+      </a>
+    </div>
+    <div class="cta-contact-info">
+      <span class="cta-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        R. Ipiranga, 35 — Centro, União da Vitória/PR
+      </span>
+      <span class="cta-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Seg–Sex 9h–18h30 · Sáb 9h–13h
+      </span>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- ── Footer ─────────────────────────────────────────── -->
+<footer>
+  <div class="footer-brand">estrela <span>Decorações</span></div>
+  <p class="footer-copy">© 2025 Estrela Decorações · União da Vitória/PR · Todos os direitos reservados</p>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/estreladecor/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://wa.me/554235233523" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://maps.google.com/?q=R.+Ipiranga,+35+União+da+Vitória+PR" target="_blank" rel="noopener">Como chegar</a>
+  </div>
+</footer>
+
+<!-- ── FAB Bar (mobile) ───────────────────────────────── -->
+<div class="fab-bar" role="navigation" aria-label="Contato rápido">
+  <a href="https://wa.me/554235233523?text=Olá!%20Vim%20pelo%20site%20da%20Estrela%20Decorações." class="fab-btn wpp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+  <a href="tel:+554235233523" class="fab-btn tel">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.79 9.11a19.79 19.79 0 01-3.07-8.68A2 2 0 012.7 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.67a16 16 0 006 6l1.06-1.06a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Ligar
+  </a>
+</div>
+
+<!-- Behold widget: carrega só quando seção entra na tela -->
+<script>
+(function(){
+  var loaded = false;
+  var target = document.querySelector('.behold-wrap');
+  if (!target) return;
+  var obs = new IntersectionObserver(function(entries){
+    if (entries[0].isIntersecting && !loaded) {
+      loaded = true;
+      var s = document.createElement('script');
+      s.type = 'module';
+      s.src = 'https://w.behold.so/widget.js';
+      document.head.appendChild(s);
+      obs.disconnect();
+    }
+  }, { rootMargin: '200px' });
+  obs.observe(target);
+})();
+</script>
+<script>
+/* ── Nav scroll ─────────────────────────────────────── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+/* ── Reveal on scroll ───────────────────────────────── */
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+/* ── Brands counter ─────────────────────────────────── */
+(function() {
+  const target = 40;
+  const digits = document.getElementById('brandsDigits');
+  if (!digits) return;
+  let started = false;
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !started) {
+      started = true;
+      observer.disconnect();
+      runCounter();
+    }
+  }, { threshold: 0.4 });
+  observer.observe(document.getElementById('brandsNum'));
+
+  function runCounter() {
+    let current = 0;
+    const duration = 1400; // ms
+    const steps = target;
+    const interval = duration / steps;
+
+    const tick = setInterval(() => {
+      current++;
+      digits.classList.remove('flip');
+      void digits.offsetWidth; // reflow to restart animation
+      digits.classList.add('flip');
+      digits.textContent = current;
+      if (current >= target) clearInterval(tick);
+    }, interval);
+  }
+})();
+
+/* ── Google Maps + Places (nova API) ────────────────── */
+const PLACE_ID = 'ChIJnwyqN_Bh5pQRKkkeTL8LPUc';
+const API_KEY  = 'AIzaSyCdshoB4bjPors-THMzCqHHLjHgCK0Yx1I';
+
+window.initMaps = async function() {
+  const { Map }                  = await google.maps.importLibrary('maps');
+  const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
+  const { Place }                = await google.maps.importLibrary('places');
+
+  // ── Mapa ────────────────────────────────────────────
+  const map = new Map(document.getElementById('gmap'), {
+    center: { lat: -26.2304, lng: -51.0856 },
+    zoom: 16,
+    mapId: 'DEMO_MAP_ID',
+    colorScheme: 'DARK',
+    mapTypeControl: false,
+    streetViewControl: false,
+    fullscreenControl: false,
+  });
+
+  // ── Place details + avaliações ───────────────────────
+  try {
+    const place = new Place({ id: PLACE_ID, requestedLanguage: 'pt-BR' });
+    await place.fetchFields({
+      fields: ['location', 'displayName', 'rating', 'userRatingCount', 'reviews']
+    });
+
+    if (place.location) {
+      map.setCenter(place.location);
+      new AdvancedMarkerElement({ map, position: place.location, title: 'Estrela Decorações' });
+    }
+
+    if (place.rating) {
+      document.getElementById('googleNum').textContent = place.rating.toFixed(1);
+    }
+    if (place.userRatingCount) {
+      const n = place.userRatingCount;
+      document.getElementById('googleCount').textContent =
+        n >= 1000 ? `${(n/1000).toFixed(1)}k avaliações` : `${n} avaliações`;
+    }
+
+    const reviews = (place.reviews || []).filter(r => r.rating >= 4).slice(0, 4);
+    if (!reviews.length) return;
+
+    const h = reviews[0];
+    const hName = h.authorAttribution?.displayName || 'Cliente';
+    document.getElementById('heroReviewText').textContent    = `"${h.text}"`;
+    document.getElementById('heroReviewName').textContent    = hName;
+    document.getElementById('heroReviewInitial').textContent = hName.charAt(0).toUpperCase();
+    document.getElementById('heroReviewDate').textContent    =
+      new Date(h.publishTime).toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' });
+
+    const side = reviews.slice(1, 4);
+    if (side.length) {
+            document.getElementById('sideReviews').innerHTML = side.map(r => {
+        const name = r.authorAttribution?.displayName || 'Cliente';
+        const initial = name.charAt(0).toUpperCase();
+        const date = new Date(r.publishTime).toLocaleDateString('pt-BR', {month:'long', year:'numeric'});
+        const text = r.text.length > 220 ? r.text.substring(0, 220) + '…' : r.text;
+        return `<div class="review-card-small">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"${text}"</p>
+          <div class="review-author">
+            <div class="review-avatar-placeholder" style="width:36px;height:36px;font-size:14px;">${initial}</div>
+            <div class="review-author-info">
+              <span class="review-author-name">${name}</span>
+              <span class="review-author-date">${date}</span>
+            </div>
+     
